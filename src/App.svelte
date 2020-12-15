@@ -6,6 +6,7 @@
   let formRef;
 
   let formValues = {
+    email: "",
     password: "",
     confirmPassword: "",
   };
@@ -29,8 +30,6 @@
 
     validateForm();
     const isValid = formRef.checkValidity();
-
-    console.log("submit, valid:", isValid);
 
     if (isValid) {
       alert("Success!");
@@ -173,7 +172,8 @@
       placeholder="Email"
       autocomplete="email"
       autocapitalize="off"
-      aria-label="Email" />
+      aria-label="Email"
+      bind:value={formValues.email} />
     <div class="spacer" />
     {#if formType === 'login'}
       <input
@@ -182,7 +182,8 @@
         type="password"
         placeholder="Password"
         autocomplete="current-password"
-        aria-label="Password" />
+        aria-label="Password"
+        bind:value={formValues.password} />
       <div class="spacer" />
     {/if}
     {#if formType === 'register'}
