@@ -11,7 +11,7 @@ import htmlnano from "htmlnano";
 import rimraf from "rimraf";
 
 const PROD = !process.env.ROLLUP_WATCH;
-const OUT_DIR = "build";
+const OUT_DIR = "docs";
 
 function hashStatic() {
   return {
