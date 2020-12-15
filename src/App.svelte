@@ -44,6 +44,8 @@
   }
 
   function handleLinkClick(e) {
+    e.preventDefault();
+    
     const linkHref = e.target.getAttribute("href");
     const newPage = linkHref.split("/")[1];
 
