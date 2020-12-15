@@ -172,7 +172,8 @@
       type="email"
       placeholder="Email"
       autocomplete="email"
-      autocapitalize="off" />
+      autocapitalize="off"
+      aria-label="Email" />
     <div class="spacer" />
     {#if formType === 'login'}
       <input
@@ -180,7 +181,8 @@
         required
         type="password"
         placeholder="Password"
-        autocomplete="current-password" />
+        autocomplete="current-password"
+        aria-label="Password" />
       <div class="spacer" />
     {/if}
     {#if formType === 'register'}
@@ -190,6 +192,7 @@
         type="password"
         placeholder="Password"
         autocomplete="new-password"
+        aria-label="Password"
         bind:value={formValues.password} />
       <div class="spacer" />
       <input
@@ -198,6 +201,7 @@
         type="password"
         placeholder="Confirm your password"
         autocomplete="new-password"
+        aria-label="Password confirmation"
         on:input={onConfirmPasswordChange}
         bind:this={confirmPasswordRef}
         bind:value={formValues.confirmPassword} />
