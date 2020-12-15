@@ -1,6 +1,6 @@
 <script>
   // register, restore, login
-  let formType = window.location.pathname.split("/")[1] || "login";
+  let formType = "login";
 
   let confirmPasswordRef;
   let formRef;
@@ -9,10 +9,6 @@
     password: "",
     confirmPassword: "",
   };
-
-  $: {
-    window.history.pushState(null, "", `/${formType}`);
-  }
 
   function validateForm() {
     if (formType === "register") {
@@ -45,7 +41,7 @@
 
   function handleLinkClick(e) {
     e.preventDefault();
-    
+
     const linkHref = e.target.getAttribute("href");
     const newPage = linkHref.split("/")[1];
 
@@ -164,7 +160,7 @@
   <form class="pane" on:submit={onSubmit} bind:this={formRef}>
     <img
       class="logotype"
-      src="/logo.svg"
+      src="logo.svg"
       width="100"
       height="100"
       alt=""
